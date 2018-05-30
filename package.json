@@ -1,0 +1,29 @@
+{
+  "name": "@ishiduca/routing",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test:lint": "standard",
+    "test:node": "NDOE_ENV=test tape t/*.js",
+    "test": "npm-run-all -s test:deps test:lint test:node"
+  },
+  "keywords": [
+    "routing",
+    "route",
+    "router"
+  ],
+  "author": "ishiduca@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "bl": "^2.0.0",
+    "dependency-check": "^3.1.0",
+    "npm-run-all": "^4.1.3",
+    "standard": "^11.0.1",
+    "tape": "^4.9.0"
+  },
+  "dependencies": {
+    "xtend": "^4.0.1"
+  }
+}
