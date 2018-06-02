@@ -2,7 +2,7 @@
 const url = require('url')
 const http = require('http')
 const bl = require('bl')
-const router = require('../index')()
+const router = require('../routing')()
 
 router.define('/user/:user_id(/:category)', {
   GET: (req, res, params, query) => {

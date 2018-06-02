@@ -1,4 +1,4 @@
-# @ishidduca/routing
+# @ishiduca/routing
 
 The underlying router for implementing your own router.
 
@@ -14,7 +14,7 @@ const dashboard = {dashboard: true}
 router.define('/dashboard(/:x/(:x))', dashboard)
 
 const node = router.match('/dashboard/xyz/abc')
-assert.deepEqual(node.values, [{dashboard}])
+assert.deepEqual(node.values, [{dashboard: true}])
 assert.deepEqual(node.params, {x: ['xyz', 'abc']})
 ```
 
@@ -25,7 +25,6 @@ assert.deepEqual(node.params, {x: ['xyz', 'abc']})
 ```js
 const node = router.define('/user(/:user_id/(profile))/(page)', 1, 2, -1)
 // {
-//   patterns: [...],
 //   values: [1, 2, -1]
 // }
 ```
@@ -38,11 +37,10 @@ const node = router.define('/user(/:user_id/(profile))/(page)', 1, 2, -1)
 ### const matched = router.match(uriStr)
 
 ```js
-router.define('/user(/:user_id/(profile))/(page)')
+router.define('/user(/:user_id/(profile))/(page)', 'GET', (req, res) => {...})
 const matched = router.match('/user/Tony/profile')
 // {
-//   patterns: [],
-//   values: [],
+//   values: ['GET', (req, res) => {...}],
 //   params: {user_id: 'Tony'}
 // }
 

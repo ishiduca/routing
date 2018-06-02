@@ -1,8 +1,8 @@
 {
   "name": "@ishiduca/routing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "routing.js",
   "scripts": {
     "test:deps": "dependency-check . && dependency-check . --extra --no-dev",
     "test:lint": "standard",
@@ -14,6 +14,11 @@
     "route",
     "router"
   ],
+  "standard": {
+    "ignore": [
+      "t/*"
+    ]
+  },
   "author": "ishiduca@gmail.com",
   "license": "Apache-2.0",
   "devDependencies": {
